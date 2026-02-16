@@ -2,14 +2,17 @@ import { useState } from 'react';
 import './App.css';
 import Home from './pages/Home/Home';
 import Azkar from './pages/Azkar/Azkar';
+import { Routes, Route } from 'react-router';
+import Footer from './components/Footer/Footer';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Home></Home>
-      <Azkar></Azkar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/azkar/morning" element={<Azkar />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
